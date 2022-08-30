@@ -12,6 +12,9 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 
+#I added this section to import the secret key from the env.py file, then also below added (line 34 at time of writing) SECRET_KEY = os.environ.get('SECRET_KEY')
+import os
+
 from os import path
 if path.exists("env.py"):
     import env
@@ -28,6 +31,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # Application definition
 
